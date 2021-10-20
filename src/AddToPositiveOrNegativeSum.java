@@ -1,6 +1,11 @@
+import java.sql.SQLOutput;
 import java.util.Scanner;
 public class AddToPositiveOrNegativeSum {
     public static void main(String[] args) {
+        Scanner scan = new Scanner();
+        System.out.print("Enter a number: ");
+        int num = scan.nextInt();
+
         // declare and instantiate a Scanner variable and object
 
         // declare and initialize variables for a positive and negative sum
