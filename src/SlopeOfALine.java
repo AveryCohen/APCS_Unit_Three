@@ -1,3 +1,5 @@
+
+import java.util.Scanner;
 public class SlopeOfALine {
 
     /**
@@ -9,12 +11,33 @@ public class SlopeOfALine {
      * @return - Different strings based on whether the line is vertical or not
      */
     public static String slope(int x1, int y1, int x2, int y2) {
+        if(x1==x2) {
+            String vert = "The line defined by the points (" + x1 + ", " + y1 + ") and (" + x2 + ", " + y2 + ")" + " is a vertical line and the slope is undefined";
+            return vert;
+        }
+        else {
+            double s1 = y2 - y1;
+            double s2 = x2 - x1;
+            double slopeCalc = s1/s2;
+            String calcSlope = "The line defined by the points (" + x1 + ", " + y1 + ") and (" + x2 + ", " + y2 + ")" + " has a slope of " + slopeCalc;
+            return calcSlope;
+        }
 
-        // update the line below to return a properly formatted string
-        return "";
     }
 
     public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        System.out.print("Enter x1: ");
+        int x1 = scan.nextInt();
+        System.out.print("Enter y1: ");
+        int y1 = scan.nextInt();
+        System.out.print("Enter x2: ");
+        int x2 = scan.nextInt();
+        System.out.print("Enter y2: ");
+        int y2 = scan.nextInt();
+        System.out.println(slope(x1, y1, x2, y2));
+
+
         // Get input from the user (you will need to create a Scanner object)
         // Call and print the result of the slope method as shown in the instructions.
     }

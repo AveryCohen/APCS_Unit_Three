@@ -2,7 +2,7 @@ import java.sql.SQLOutput;
 import java.util.Scanner;
 public class AddToPositiveOrNegativeSum {
     public static void main(String[] args) {
-        Scanner scan = new Scanner();
+        Scanner scan = new Scanner(System.in);
         System.out.print("Enter a number: ");
         int num = scan.nextInt();
 
