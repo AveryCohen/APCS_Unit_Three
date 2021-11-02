@@ -10,7 +10,7 @@ public class Pattern extends JComponent
    public boolean fill(int row, int column)
    {
       // Change the Boolean expression to produce different patterns
-      return !(row == 0 && column == 0);      
+      return (row == 0;
    }
 
    public void paintComponent(Graphics g)
