@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class EasterDate {
     public static Boolean isValidYear(int year) {
-        if (year < 1900 || year == 1954 || year == 1981 || year == 2049 || year == 2076 || year > 2099) {
+        if (year < 1900 || year > 2099) {
             return false;
         }
         else {
@@ -15,17 +15,22 @@ public class EasterDate {
             int b = year % 4;
             int c = year % 7;
             int d = (19 * a + 24) % 30;
-            int e = (2*b + 4*c + 6*d + 5) % 7;
+            int e = (2 * b + 4 * c + 6 * d + 5) % 7;
             int date = 22 + d + e;
+            if (year == 1954 || year == 1981 || year == 2049 || year == 2076 ) {
+                date -= 7;
+            }
             if (date > 31) {
                 String aprilDate = "In " + year + " Easter is on April " + (date - 31);
-                return  aprilDate;
+                return aprilDate;
             }
             else {
                 String marchDate = "In " + year + " Easter is on March " + date;
-                return  marchDate;
+                return marchDate;
             }
         }
+
+
         else {
             return "You have entered an invalid year";
         }
